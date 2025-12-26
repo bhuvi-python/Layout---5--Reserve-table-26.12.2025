@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grant Buffet – Overview</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<!-- Hamburger icon only -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#F5EBDD}
+
+/* ================= FINAL HEADER ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.nav{display:flex;gap:120px}
+.nav a{color:#fff;text-decoration:none;font-size:20px}
+.nav a.active{
+    color:black;
+}
+.hamburger{display:none;position:absolute;left:20px;font-size:26px;color:#fff;cursor:pointer}
+
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+.logo h1{font-family:'Playfair Display';font-size:32px}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+
+.search-bar{
+    flex:1;
+    height:70px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{border:none;outline:none;flex:1;background:transparent;font-size:22px}
+
+/* Header icons size */
+.profile-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.icon-btn{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.icon-btn img{width:23px;height:23px}
+/* Small icons */
+.header-icon{
+    width:24px;
+    height:24px;
+}
+
+/* DP ONLY */
+.profile-pic{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ================= HERO RESTAURANT ================= */
+.hero-card{
+    max-width:1440px;
+    margin:40px auto 0;
+    background:#fff;
+    border-radius:10px;
+    display:flex;
+    overflow:hidden;
+}
+.hero-img{
+    width:50%;
+    height:424px;
+    background:url('Grant Buffet Menu.png') center/cover no-repeat;
+}
+.hero-details{
+    width:50%;
+    padding:40px;
+    position:relative;
+}
+.hero-details h2{font-size:32px;font-weight:600}
+.hero-details .addr{font-size:20px;margin:10px 0;color:#2E2E2E}
+.hero-details .desc{margin-top:40px;font-size:20px}
+.hero-details .cost{margin-top:20px;font-weight:500}
+
+.heart{
+    position:absolute;
+    top:40px;
+    right:40px;
+    cursor:pointer;
+}
+.heart img{width:26px;height:26px}
+.heart.filled img{width:70px;height:70px}
+.stars{
+    position:absolute;
+    bottom:30px;
+    right:550px;
+    display:flex;
+    gap:4px;
+}
+.stars span{
+    width:24px;
+    height:24px;
+    background:#F0FF99;
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+
+/* ================= DIVIDER ==+=============== */
+.divider{
+    width:100%;
+    height:1px;
+    background:#000;
+    margin:30px auto;
+    margin-right: 250px;
+}
+
+/* ================= TABS ================= */
+.tabs{
+    max-width:1440px;
+    margin:auto;
+    display:flex;
+}
+.tab{
+    width:50%;
+    background:#fff;
+    border:1px solid #000;
+    text-align:center;
+    padding:20px;
+    font-size:25px;
+    font-weight:500;
+}
+.tab.active{
+    border-bottom:8px solid #B89C65;
+}
+
+/* ================= CONTENT ================= */
+.content{
+    max-width:1440px;
+    background:#fff;
+    margin:auto;
+    padding:50px;
+    display:flex;
+    gap:60px;
+    
+}
+.left,.right{flex:1}
+
+.block{margin-bottom:30px}
+.block h3{font-size:28px;margin-bottom:10px}
+.block p{font-size:20px;line-height:1.6}
+
+.icon-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+.icon-row img{width:20px}
+.gold-amount{
+    color:#B89C65;
+    font-weight:600;
+}
+
+/* Map */
+.map-box{
+    position: relative;      /* REQUIRED for overlay positioning */
+    margin-top:20px;
+}
+
+.map-box img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+}
+.reserve-btn{
+    margin-top:20px;
+    background:#B89C65;
+    color:#fff;
+    border:none;
+    padding:12px 30px;
+    font-size:30px;
+    border-radius:6px;
+    cursor:pointer;
+}
+.map-wrapper{
+    position:relative;
+    margin-top:20px;
+}
+
+.map-img{
+    width:100%;
+    border-radius:10px;
+}
+
+.map-overlay{
+    position:absolute;
+    top:50px;
+    left:350px;
+    padding:15px;
+    color: #B89C65;
+    }
+
+.map-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+}
+
+.map-row img{
+    width:16px;
+    height:16px;
+}
+
+.map-google{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:12px;
+}
+
+.map-google img{
+    width:18px;
+    height:18px;
+    margin-bottom: 100px;
+}
+
+.google-text{
+    font-family:'Poppins';
+    font-weight:600;
+    font-size:20px;
+    margin-bottom: 100px;
+    }
+
+/* Google colors */
+.google-text .g1{ color:#4285F4; } /* Blue */
+.google-text .o1{ color:#DB4437; } /* Red */
+.google-text .o2{ color:#F4B400; } /* Yellow */
+.google-text .g2{ color:#4285F4; } /* Blue */
+.google-text .l { color:#0F9D58; } /* Green */
+.google-text .e { color:#DB4437; } /* Red */
+
+/* ================= FOOTER ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.footer-center{
+    flex:1;
+    text-align:center;
+}
+
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{
+    width:32px;
+    height:32px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.nav{display:none;flex-direction:column;position:absolute;top:77px;background:#B89C65;width:100%}
+.nav.show{display:flex}
+.hamburger{display:block}
+
+.header-bottom{flex-direction:column;height:auto}
+.hero-card{flex-direction:column}
+.hero-img,.hero-details{width:100%}
+.tabs{flex-direction:column}
+.content{flex-direction:column}
+
+.footer-cols,.city-links,.footer-bottom{
+    flex-direction:column;
+    gap:30px;
+    text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<div class="header-top">
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <nav class="nav" id="navMenu">
+       <a href="1.Home with animation.html">Home</a>
+            <a href="1.Perfect Buffet.html" class="active">Reservation</a>
+            <a href="1.Blog.html">Blog</a>
+            <a href="1.About Us.html">About us</a>
+            <a href="1.Contact Us.html">Contact us</a>
+            <a href="1.Need Help.html">Help</a>
+    </nav>
+</div>
+
+<div class="header-bottom">
+    <div class="logo">
+        <h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+        <p>Never wait for your meal</p>
+    </div>
+    <div class="search-bar"><input placeholder="Search"></div>
+   <div class="profile-actions">
+            <div class="icon-btn"><img src="Bell.png"></div>
+            <div class="icon-btn"><a href="1.Contact Us.html"><img src="chat.png"></a></div>
+            <div class="icon-btn"><a href="1.Grand Buffet Wishlist .html"><img src="heart.png"></a></div>
+            <img src="DP.png" class="profile-pic">
+        </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero-card">
+    <div class="hero-img"></div>
+    <div class="hero-details">
+        <h2>Grant Buffet</h2>
+        <p class="addr">Upper Ground Floor, East court, Phoenix Market City, Viman nagar, Chennai.</p>
+        <div class="divider"></div>
+        <p class="desc">North Indian, Mohali, Italian, BBQ</p>
+        <p class="cost">Cost for two : Rs.1000</p>
+        <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="heart" onclick="toggleHeart(this)">
+            <img src="Heart.png">
+        </div>
+    </div>
+</div>
+
+<!-- ================= TABS ================= -->
+<div class="tabs">
+    <div class="tab active">Overview Restaurant</div>
+    <div class="tab"><a href="1.Grant Buffet Menu.html" style="text-decoration: none;color: black;">Menu Card</a></div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<div class="content">
+
+    <!-- LEFT BLOCK -->
+    <div class="left">
+
+        <div class="block">
+             <img src="Phone1.png">
+            <h3>Grant Buffet Overview</h3>
+        </div>
+
+        <div class="block">
+            <p>Phone Number</p>
+            <p>3988398923</p>
+        </div>
+
+        <div class="block">
+            <h3>Cuisines</h3>
+            <p>North Indian, Mohali, Italian, BBQ</p>
+        </div>
+
+        <div class="block">
+            <h3>Average Cost</h3>
+            <p><span class="gold-amount">₹ 1000</span> for two peoples (approx.)</p>
+
+        </div>
+
+        <div class="block">
+            <h3>Famous for</h3>
+            <p>
+                Decor, Live Music, Live Grill, Mutton Roganjosh,  
+                Naan, Dahi Vada, Salads, Kulfi, Chicken Tikka
+            </p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT BLOCK -->
+    <div class="right">
+
+        <div class="block">
+            <h3>Opening hours</h3>
+            <div class="icon-row">
+                <img src="clock.png">
+                <p>12noon – 3pm, 7pm – 11pm</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <h3>Address</h3>
+            <p>
+                Upper Ground Floor, East Court, Phoenix Market City,  
+                Viman nagar, Chennai – 623088
+            </p>
+        </div>
+
+        <!-- MAP WITH ICONS -->
+        <div class="map-wrapper">
+            <img src="Google.png" class="map-img">
+
+<div class="map-overlay">
+<div class="map-google">
+    <img src="location.png">
+
+    <div class="google-text">
+        <span class="g1">G</span>
+        <span class="o1">O</span>
+        <span class="o2">O</span>
+        <span class="g2">G</span>
+        <span class="l">L</span>
+        <span class="e">E</span>
+    </div>
+</div>
+  
+
+<div class="map-row">
+        <img src="phone-icon.png">
+        <span>(123) 8940-985498</span>
+    </div>
+
+    <div class="map-row">
+        <img src="mail-icon.png">
+        <span>Info@Bookmytable.com</span>
+    </div>
+
+    <div class="map-row">
+        <img src="location-icon.png">
+        <span>Chennai 54375387</span>
+    </div>
+
+</div>
+
+        </div>
+
+        <a href="1.Reservation Table.html"><button class="reserve-btn">Reserve Now</button></a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-cols">
+        <div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+        <div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+        <div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+        <div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="city-links">
+        <div>Restaurant in Chennai<br>Restaurant in Pune</div>
+        <div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+        <div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    <div class="footer-center">
+        <p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+        <div class="social-icons">
+            <img src="social-facebook.png">
+            <img src="social-twitter.png">
+            <img src="social-instagram.png">
+        </div>
+    </div>
+
+    <div class="footer-address">
+        <div class="address-row">
+            <img src="phone-icon.png">
+            <span>(123) 8940-985498</span>
+        </div>
+        <div class="address-row">
+            <img src="mail-icon.png">
+            <span>Info@Bookmytable.com</span>
+        </div>
+        <div class="address-row">
+            <img src="location-icon.png">
+            <span>Chennai 54375387</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+
+function toggleHeart(el){
+    const img = el.querySelector("img");
+    img.src = img.src.includes("heart-filled") ? "Heart.png" : "heart-filled.png";
+}
+</script>
+
+</body>
+</html>

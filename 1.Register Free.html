@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register Free</title>
+
+<!-- Open Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Open Sans', sans-serif;
+    
+}
+
+body{
+    background:#FAF6F2;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+/* MAIN WRAPPER */
+.register-wrapper{
+    width:1200px;
+    height:600px;
+    position:relative;
+    display:flex;
+    gap:30px;
+    
+}
+
+/* ================= LEFT CARD ================= */
+.register-card{
+    width:550px;
+    height:473px;
+    background:#fff;
+    box-shadow:7px 6px 4px rgba(0,0,0,0.25);
+    border-radius:12px;
+    position:relative;
+    padding:40px 50px;
+    margin-top: 50px;
+    margin-right: 150px;
+}
+
+/* CLOSE ICON */
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* TITLE */
+.register-card h2{
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:30px;
+    text-align: center;
+}
+
+/* INPUT */
+.input-box{
+    width:100%;
+    height:51px;
+    border:1px solid #B89C65;
+    border-radius:14px;
+    padding-left:20px;
+    font-size:15px;
+    margin-bottom:23px;
+}
+
+/* LOGIN ROW */
+.login-row{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.login-btn{
+    width:168px;
+    height:41px;
+    background:#B89C65;
+    border-radius:14px;
+    border:none;
+    color:#fff;
+    font-size:24px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.forgot{
+    font-size:15px;
+    font-weight:300;
+    cursor:pointer;
+}
+
+/* SIGN UP USING */
+.divider-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:30px 0 25px;
+}
+
+.divider{
+    flex:1;
+    height:1px;
+    background:#000;
+    opacity:.45;
+}
+
+.divider-text{
+    font-size:20px;
+    font-weight:600;
+}
+
+/* SOCIAL BOX */
+.social-box{
+    width:100%;
+    height:51px;
+    border:1px solid #000;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:15px;
+}
+
+.social-box i{
+    font-size:24px;
+    cursor:pointer;
+}
+
+.fa-google{color:#DB4437}
+.fa-facebook{color:#1877F2}
+.fa-instagram{color:#E1306C}
+.fa-twitter{color:#1D9BF0}
+
+/* FOOT TEXT */
+.footer-text{
+    font-size:13px;
+    margin-left: 50px;
+    
+}
+
+.footer-text span{
+    color:#B89C65;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ================= RIGHT IMAGE ================= */
+.register-image{
+    width:378px;
+    height:574px;
+    border-radius:10px;
+    background:url('Register Free.png') center/cover no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-wrapper">
+
+    <!-- LEFT CARD -->
+    <div class="register-card">
+        <div class="close-btn">&times;</div>
+
+        <h2>Register Free !</h2>
+
+        <input type="email" class="input-box" placeholder="Enter your e-mail">
+        <input type="password" class="input-box" placeholder="Password">
+
+        <div class="login-row">
+            <a href="1.Home with animation.html"><button class="login-btn">Login</button></a>
+            <div class="forgot">Forget your password?</div>
+        </div>
+
+        <div class="divider-row">
+            <div class="divider"></div>
+            <div class="divider-text">Sign Up Using</div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="social-box">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+
+        <div class="footer-text">
+            Don’t have an account ? <span>Create New Account</span>
+        </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="register-image"></div>
+
+</div>
+
+</body>
+</html>

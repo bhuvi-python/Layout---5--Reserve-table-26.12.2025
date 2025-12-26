@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Poppins', sans-serif;
+    background:#F5EBDD;
+}
+
+/* ================= ICON SIZE & SPACING CONTROLS ================= */
+:root{
+    --bell-size: 23px;
+    --bell-margin: 0px;
+
+    --chat-size: 23px;
+    --chat-margin: 0px;
+
+    --heart-size: 23px;
+    --heart-margin: 0px;
+
+    --dp-size: 60px;
+    --dp-margin: 0px;
+}
+
+/* ================= HEADER ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.nav{
+    display:flex;
+    gap:120px;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+}
+.nav a.active{
+    color:black;
+}
+
+.hamburger{
+    display:none;
+    position:absolute;
+    left:20px;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+
+/* Logo */
+.logo h1{
+    font-family:'Playfair Display';
+    font-size:32px;
+}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+
+/* Search */
+.search-bar{
+    flex:1;
+    height:70px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{
+    border:none;
+    outline:none;
+    flex:1;
+    background:transparent;
+    font-size:22px;
+}
+.search-bar i{font-size:22px}
+
+/* Profile */
+.profile-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.icon-btn{
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* INDIVIDUAL ICON CONTROL */
+.icon-btn img[src*="Bell"]{
+    width:var(--bell-size);
+    height:var(--bell-size);
+    margin:var(--bell-margin);
+}
+.icon-btn img[src*="chat"]{
+    width:var(--chat-size);
+    height:var(--chat-size);
+    margin:var(--chat-margin);
+}
+.icon-btn img[src*="heart"]{
+    width:var(--heart-size);
+    height:var(--heart-size);
+    margin:var(--heart-margin);
+}
+.profile-pic{
+    width:var(--dp-size);
+    height:var(--dp-size);
+    margin:var(--dp-margin);
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;              /* space between text and icon */
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:0.2em;
+    margin:60px 0 30px;
+}
+
+.contact-chat-icon{
+    width:32px;            /* adjust size if needed */
+    height:32px;
+}
+
+.contact-box{
+    max-width:1120px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:33px;
+    padding:50px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-field label{
+    font-size:24px;
+}
+.contact-field input,
+.contact-field textarea{
+    width:100%;
+    height:48px;
+    border-radius:9px;
+    border:1px solid #B89C65;;
+    padding:10px;
+    font-size:18px;
+}
+.contact-field textarea{
+    height:150px;
+}
+
+.support{
+    margin-top:30px;
+    font-size:24px;
+    font-weight:600;
+}
+.support-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:10px;
+    font-size:22px;
+}
+
+.submit-area{
+    text-align:right;
+    margin-top:40px;
+}
+.submit-btn{
+    background:#B89C65;
+    color:#fff;
+    border:none;
+    padding:20px 60px;
+    font-size:24px;
+    border-radius:10px;
+    cursor:pointer;
+}
+.success-msg{
+    color:#B89C65;
+    font-size:24px;
+    font-weight:600;
+}
+
+/* ================= IMAGE ================= */
+.contact-img{
+    width:100%;
+    height:543px;
+    background:url('Contact Us.png') center/cover no-repeat;
+    margin-top:80px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.footer-center{text-align:center;flex:1}
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{width:50px}
+
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{width:32px}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.nav{display:none}
+.hamburger{display:block}
+
+.header-bottom{flex-direction:column;height:auto}
+.search-bar{width:100%}
+
+.contact-grid{grid-template-columns:1fr}
+.footer-cols,.city-links,.footer-bottom{
+    flex-direction:column;
+    text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="header-top">
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <nav class="nav" id="navMenu">
+       <a href="1.Home with animation.html">Home</a>
+            <a href="1.Perfect Buffet.html">Reservation</a>
+            <a href="1.Blog.html">Blog</a>
+            <a href="1.About Us.html">About us</a>
+            <a href="1.Contact Us.html" class="active">Contact us</a>
+            <a href="1.Need Help.html">Help</a>
+    </nav>
+</div>
+
+<div class="header-bottom">
+    <div class="logo">
+        <h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+        <p>Never wait for your meal</p>
+    </div>
+
+    <div class="search-bar">
+        <input placeholder="Search">
+        <i class="fa fa-search"></i>
+    </div>
+
+    <div class="profile-actions">
+            <div class="icon-btn"><img src="Bell.png"></div>
+            <div class="icon-btn"><a href="1.Contact Us.html"><img src="chat.png"></a></div>
+            <div class="icon-btn"><a href="1.Grand Buffet Wishlist .html"><img src="heart.png"></a></div>
+            <img src="DP.png" class="profile-pic">
+        </div>
+</div>
+</header>
+
+<h2 class="contact-title">
+    Contact Us
+    <img src="Chat-Black.png" alt="Chat" class="contact-chat-icon">
+</h2>
+
+
+<div class="contact-box">
+<div class="contact-grid">
+    <div class="contact-field">
+        <label>Name</label>
+        <input>
+    </div>
+    <div class="contact-field">
+        <label>Email id</label>
+        <input>
+    </div>
+    <div class="contact-field">
+        <label>Mobile number</label>
+        <input>
+    </div>
+    <div class="contact-field">
+        <label>Message for Query</label>
+        <textarea></textarea>
+    </div>
+</div>
+
+<div class="support">Customer Support</div>
+<div class="support-row">
+    <img src="phone-icon.png" width="32">
+    <span>Helpline Number: +91 98765 43210</span>
+</div>
+
+<div class="submit-area" id="submitArea">
+    <button class="submit-btn" onclick="submitForm()">Submit</button>
+</div>
+</div>
+
+<div class="contact-img"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-cols">
+<div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+<div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+<div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+<div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="city-links">
+<div>Restaurant in Chennai<br>Restaurant in Pune</div>
+<div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+<div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+</div>
+</footer>
+
+<div class="footer-bottom">
+<div class="footer-center">
+<p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+<div class="social-icons">
+<img src="social-facebook.png">
+<img src="social-twitter.png">
+<img src="social-instagram.png">
+</div>
+</div>
+
+<div class="footer-address">
+<div class="address-row"><img src="phone-icon.png">(123) 8940-985498</div>
+<div class="address-row"><img src="mail-icon.png">Info@Bookmytable.com</div>
+<div class="address-row"><img src="location-icon.png">Chennai 54375387</div>
+</div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+function submitForm(){
+    document.getElementById("submitArea").innerHTML =
+    '<div class="success-msg">Submitted Successfully</div>';
+    setTimeout(()=>window.location.href="1.Home after Login.html",2000);
+}
+</script>
+
+</body>
+</html>

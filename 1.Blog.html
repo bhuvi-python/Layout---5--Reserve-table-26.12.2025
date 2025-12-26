@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Our Blog</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Icons (only for hamburger) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Poppins', sans-serif;
+    background:#F5EBDD;
+}
+
+/* ================= HEADER (AS-IS) ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.nav{
+    display:flex;
+    gap:120px;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+}
+.nav a.active{
+    color:black;
+}
+.hamburger{
+    display:none;
+    position:absolute;
+    left:20px;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+}
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+.logo h1{
+    font-family:'Playfair Display';
+    font-size:32px;
+}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+
+.search-bar{
+    flex:1;
+    height:70px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{
+    border:none;
+    outline:none;
+    flex:1;
+    background:transparent;
+    font-size:22px;
+}
+.search-bar i{font-size:22px}
+
+.profile-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.icon-btn{
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.icon-btn img{width:23px;height:23px}
+.profile-pic{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ================= BLOG SECTION ================= */
+.blog-wrapper{
+    max-width:1440px;
+    margin:0 auto;
+    padding:40px 30px 80px;
+    text-align:center;
+}
+
+.blog-title{
+    font-family:'Source Serif Pro';
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.blog-subtitle{
+    font-family:'Source Serif Pro';
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.blog-image{
+    width:100%;
+    max-width:2000px;
+    margin:0 auto 30px;
+     
+    overflow:hidden;
+}
+.blog-image img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.blog-content{
+    max-width:1400px;
+    margin:0 auto;
+    font-family:'Source Serif Pro';
+    font-size:24px;
+    line-height:35px;
+    color:#000;
+    text-align:left;
+}
+
+/* ================= FOOTER (AS-IS) ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    
+    justify-content:space-between;
+}
+.footer-center{
+    flex:1;
+    text-align:center;
+}
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{
+    width:32px;
+    height:32px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+    .hamburger{display:block}
+    .nav{
+        display:none;
+        position:absolute;
+        top:77px;
+        left:0;
+        width:100%;
+        background:#B89C65;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:20px 0;
+    }
+    .nav.show{display:flex}
+    .header-bottom{
+        flex-direction:column;
+        height:auto;
+    }
+    .blog-title{font-size:26px}
+    .blog-subtitle{font-size:18px}
+    .blog-content{font-size:18px;line-height:28px}
+    .footer-cols,
+    .city-links,
+    .footer-bottom{
+        flex-direction:column;
+        align-items:center;
+        gap:30px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="header-top">
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav" id="navMenu">
+            <a href="1.Home with animation.html">Home</a>
+            <a href="1.Perfect Buffet.html">Reservation</a>
+            <a href="1.Blog.html"class="active">Blog</a>
+            <a href="1.About Us.html" >About us</a>
+            <a href="1.Contact Us.html">Contact us</a>
+            <a href="1.Need Help.html">Help</a>
+        </nav>
+    </div>
+
+    <div class="header-bottom">
+        <div class="logo">
+            <h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+            <p>Never wait for your meal</p>
+        </div>
+        <div class="search-bar">
+            <input placeholder="Search">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="profile-actions">
+            <div class="icon-btn"><img src="Bell.png"></div>
+            <div class="icon-btn"><a href="1.Contact Us.html"><img src="chat.png"></a></div>
+            <div class="icon-btn"><a href="1.Grand Buffet Wishlist .html"><img src="heart.png"></a></div>
+            <img src="DP.png" class="profile-pic">
+        </div>
+    </div>
+</header>
+
+<!-- ================= BLOG CONTENT ================= -->
+<section class="blog-wrapper">
+    <h2 class="blog-title">From Our Blog</h2>
+    <p class="blog-subtitle">Stay Inspired with Dining Trends Tips & News</p>
+
+    <div class="blog-image">
+        <img src="blog.png" alt="Blog Image">
+    </div>
+
+    <div class="blog-content">
+        Discover the most loved spots to impress your partner and reserve your perfect table in seconds.
+        Tips to enjoy eating out without compromising your health goals.
+        Beat the crowd, avoid disappointment — here’s why early reservations matter more than ever.
+        We’ve handpicked restaurants with great food and fun vibes for all ages.
+        Explore venues that offer the best ambiance, special menus, and unforgettable memories.
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-cols">
+        <div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+        <div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+        <div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+        <div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="city-links">
+        <div>Restaurant in Chennai<br>Restaurant in Pune</div>
+        <div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+        <div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    <div class="footer-center">
+        <p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+        <div class="social-icons">
+            <img src="social-facebook.png">
+            <img src="social-twitter.png">
+            <img src="social-instagram.png">
+        </div>
+    </div>
+
+    <div class="footer-address">
+        <div class="address-row"><img src="phone-icon.png"><span>(123) 8940-985498</span></div>
+        <div class="address-row"><img src="mail-icon.png"><span>Info@Bookmytable.com</span></div>
+        <div class="address-row"><img src="location-icon.png"><span>Chennai 54375387</span></div>
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

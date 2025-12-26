@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservation Confirmed</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Poppins', sans-serif;
+    background:#F5EBDD;
+}
+
+/* ================= HEADER (FINAL – AS IS) ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.nav{
+    display:flex;
+    gap:120px;
+}
+.nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+}
+.nav a.active{
+    color:black;
+}
+
+.hamburger{
+    display:none;
+    position:absolute;
+    left:20px;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+}
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+.logo h1{
+    font-family:'Playfair Display';
+    font-size:32px;
+}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+.search-bar{
+    flex:1;
+    height:70px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{
+    border:none;
+    outline:none;
+    flex:1;
+    background:transparent;
+    font-size:22px;
+}
+.search-bar i{font-size:22px}
+.profile-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.icon-btn{
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.icon-btn img{width:23px;height:23px}
+.profile-pic{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ================= SUCCESS CONTENT ================= */
+.success-wrapper{
+    max-width:1440px;
+    margin:0 auto;
+    padding:80px 20px 40px;
+    text-align:center;
+}
+
+/* Check Icon */
+.success-icon{
+    width:100px;
+    height:100px;
+    background:#B89C65;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 30px;
+}
+.success-icon i{
+    font-size:40px;
+    color:#fff;
+    border:6px solid #F5F5F5;
+    padding:12px;
+    border-radius:50%;
+}
+
+/* Text */
+.success-title{
+    font-size:24px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    margin-bottom:20px;
+}
+.success-sub{
+    font-size:24px;
+    font-weight:400;
+    margin-bottom:30px;
+}
+.success-mail{
+    font-size:24px;
+    font-weight:500;
+    line-height:36px;
+    letter-spacing:0.05em;
+}
+
+/* Image Section */
+.success-image{
+    width:100%;
+    height:486px;
+    background:url('Payment Success.png') center/cover no-repeat;
+    margin-top:80px;
+}
+
+/* ================= FOOTER (FINAL – AS IS) ================= */
+
+/* ================= FOOTER (UNCHANGED) ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.footer-center{
+    flex:1;
+    text-align:center;
+}
+
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{
+    width:32px;
+    height:32px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.hamburger{display:block}
+.nav{
+    position:absolute;
+    top:77px;
+    left:0;
+    width:100%;
+    background:#B89C65;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:20px 0;
+    display:none;
+}
+.nav.show{display:flex}
+.header-bottom{
+    flex-direction:column;
+    height:auto;
+}
+.search-bar{width:100%}
+.profile-actions{margin-top:15px}
+.footer-cols,
+.city-links,
+.footer-bottom{
+    flex-direction:column;
+    gap:30px;
+    text-align:center;
+}
+.footer-address{align-items:center}
+.success-image{height:300px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<div class="header-top">
+<div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+<nav class="nav" id="navMenu">
+<a href="#">Home</a>
+<a href="#" class="active">Reservation</a>
+<a href="#">Blog</a>
+<a href="#">About us</a>
+<a href="#">Contact us</a>
+<a href="#">Help</a>
+</nav>
+</div>
+
+<div class="header-bottom">
+<div class="logo">
+<h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+<p>Never wait for your meal</p>
+</div>
+
+<div class="search-bar">
+<input placeholder="Search">
+<i class="fa fa-search"></i>
+</div>
+
+<div class="profile-actions">
+<div class="icon-btn"><img src="Bell.png"></div>
+<div class="icon-btn"><img src="chat.png"></div>
+<div class="icon-btn"><img src="heart.png"></div>
+<img src="DP.png" class="profile-pic">
+</div>
+</div>
+</header>
+
+<!-- ================= SUCCESS CONTENT ================= -->
+<div class="success-wrapper">
+<div class="success-icon">
+<i class="fa fa-check"></i>
+</div>
+
+<div class="success-title">Reservation Confirmed</div>
+<div class="success-sub">Your table has been reserved.</div>
+
+<div class="success-mail">
+A Confirmation email has been sent to:<br>
+<strong>amjaann@gmail.com</strong>
+</div>
+</div>
+
+<div class="success-image"></div>
+
+<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-cols">
+        <div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+        <div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+        <div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+        <div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="city-links">
+        <div>Restaurant in Chennai<br>Restaurant in Pune</div>
+        <div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+        <div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    <div class="footer-center">
+        <p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+        <div class="social-icons">
+            <img src="social-facebook.png">
+            <img src="social-twitter.png">
+            <img src="social-instagram.png">
+        </div>
+    </div>
+
+    <div class="footer-address">
+        <div class="address-row">
+            <img src="phone-icon.png">
+            <span>(123) 8940-985498</span>
+        </div>
+        <div class="address-row">
+            <img src="mail-icon.png">
+            <span>Info@Bookmytable.com</span>
+        </div>
+        <div class="address-row">
+            <img src="location-icon.png">
+            <span>Chennai 54375387</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

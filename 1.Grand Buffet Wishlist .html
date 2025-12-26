@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grant Buffet – Wishlist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= HEART CONTROL OPTIONS ================= */
+:root{
+    --heart-filled-size: 70px;
+    --heart-filled-top: 40px;
+    --heart-filled-right: 40px;
+}
+/* ========================================================= */
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#F5EBDD}
+
+/* ================= HEADER ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.nav{display:flex;gap:120px}
+.nav a{color:#fff;text-decoration:none;font-size:20px}
+
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+.logo h1{font-family:'Playfair Display';font-size:32px}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+
+.search-bar{
+    flex:1;
+    height:60px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:20px;
+}
+
+/* Profile */
+.profile-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.icon-btn{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.icon-btn img{width:23px;height:23px}
+.profile-pic{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
+/* ================= HERO ================= */
+.hero-card{
+    max-width:1440px;
+    margin:40px auto 20px;
+    background:#fff;
+    border-radius:10px;
+    display:flex;
+    overflow:hidden;
+}
+.hero-img{
+    width:50%;
+    height:420px;
+    background:url('Grant Buffet Menu.png') center/cover no-repeat;
+}
+.hero-details{
+    width:50%;
+    padding:40px;
+    position:relative;
+}
+.hero-details h2{font-size:32px;font-weight:600}
+.hero-details .addr{margin:10px 0 60px;font-size:23px}
+.hero-details .desc{margin-bottom:10px;font-size: 23px;}
+.hero-details .desc1{margin-top:10px;font-size: 23px;}
+.hero-details .cost{
+    font-weight:600;font-size: 20px;
+    color:#B89C65;
+}
+
+/* HEART */
+.heart{
+    position:absolute;
+    top:40px;
+    right:40px;
+    cursor:pointer;
+}
+.heart img{
+    width:25px;
+    height:25px;
+    cursor:pointer;
+}
+.heart.filled{
+    top:30px;
+    right:30px;
+}
+.heart.filled img{
+    width:45px;
+    height:45px;
+}
+
+/* STARS */
+.stars{
+    display:flex;
+    gap:6px;
+    margin-left:550px;
+}
+.stars span{
+    width:18px;
+    height:18px;
+    background:#F0FF99;
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+
+/* ADD MORE */
+.add-more-top{
+    margin-top:5px;
+    text-align:right;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* ================= TITLES ================= */
+.wishlist-title{
+    text-align:center;
+    margin:30px 0;
+    font-size:32px;
+    font-weight:600;
+    
+}
+
+.menu-item{
+    text-align:center;
+    margin:80px 0 60px;
+    font-size:32px;
+    font-weight:500;
+    letter-spacing:0.2em;
+}
+
+/* ================= SHOW MORE ================= */
+.show-more{
+    display:block;
+    margin:20px auto 40px;
+    background:#B89C65;
+    color:#fff;
+    border:none;
+    padding:10px 35px;
+    font-size:20px;
+    border-radius:5px;
+}
+
+/* ================= CONTENT ================= */
+.wishlist-content{
+    max-width:1840px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:750px 1fr 350px;
+    align-items:start;
+    gap: 50px;
+}
+
+/* ================= MENU CARD ================= */
+.menu-card{
+    background:#fff;
+    border-radius:15px;
+    display:flex;
+    overflow:hidden;
+   }
+.menu-card img{
+    width:60%;
+    object-fit:cover;
+}
+.menu-info{
+    padding:25px;
+    position:relative;
+}
+.menu-info h3{font-size:28px;margin-left: 20px;}
+.menu-info p{margin:8px 0;font-size:20px;line-height: 3;}
+.menu-price{
+    color:#B89C65;
+    font-weight:600;
+    font-size:22px;
+}
+.menu-add{
+    position:absolute;
+    bottom:25px;
+    right:25px;
+    cursor:pointer;
+}
+
+/* ================= ORDER REVIEW ================= */
+.order-review{
+    margin-left:100px;
+    
+    
+     
+}
+.order-review h3{font-size:24px;margin-bottom:15px}
+.order-review p{font-size:18px;margin:6px 0}
+.order-review .total span{
+    color:#B89C65;
+    font-weight:600;
+}
+.pay-btn{
+    margin-top:20px;
+    background:#B89C65;
+    color:#fff;
+    border:none;
+    padding:12px 30px;
+    font-size:20px;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.footer-center{
+    flex:1;
+    text-align:center;
+}
+
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{
+    width:32px;
+    height:32px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header-top">
+<nav class="nav">
+<a href="1.Home with animation.html">Home</a>
+            <a href="1.Perfect Buffet.html">Reservation</a>
+            <a href="1.Blog.html">Blog</a>
+            <a href="1.About Us.html">About us</a>
+            <a href="1.Contact Us.html">Contact us</a>
+            <a href="1.Need Help.html">Help</a>
+</nav>
+</div>
+
+<div class="header-bottom">
+<div class="logo">
+<h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+<p>Never wait for your meal</p>
+</div>
+<div class="search-bar"><input placeholder="Search"></div>
+<div class="profile-actions">
+            <div class="icon-btn"><img src="Bell.png"></div>
+            <div class="icon-btn"><a href="1.Contact Us.html"><img src="chat.png"></a></div>
+            <div class="icon-btn"><a href="1.Grand Buffet Wishlist .html"><img src="heart.png"></a></div>
+            <img src="DP.png" class="profile-pic">
+        </div>
+</div>
+
+<h2 class="wishlist-title">Our Whitelist</h2>
+
+<!-- HERO -->
+<div class="hero-card">
+<div class="hero-img"></div>
+<div class="hero-details">
+<h2>Grant Buffet</h2>
+<p class="addr">Upper Ground Floor, East Court, Phoenix Market City, Viman nagar, Chennai.</p>
+<p class="desc">North Indian, Mohali, Italian, BBQ</p>
+<p class="desc1">Cost for two:</p>
+<p class="cost">Rs.1000</p>
+
+<div class="stars">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="add-more-top"><a href="1.Perfect Buffet.html"style="text-decoration:none;color:black">Add more +</a></div>
+
+<div class="heart" onclick="toggleHeart(this)">
+<img src="Heart.png">
+</div>
+</div>
+</div>
+
+<button class="show-more">Show more</button>
+
+<h2 class="menu-item">Menu Item Whitelist</h2>
+
+<div class="wishlist-content">
+
+<!-- MENU CARD -->
+<div class="menu-card">
+<img src="Menu1.png">
+<div class="menu-info">
+<h3>Panno Catto</h3>
+<p>North Indian, Mohali, Italian, BBQ</p>
+<div class="menu-price">₹240</div>
+<div class="menu-add"><a href="1.Grant Buffet Menu.html" style="text-decoration: none;color: black;">Add more +</a></div>
+</div>
+</div>
+
+<!-- ORDER REVIEW -->
+<div class="order-review">
+<h3>Order Review</h3>
+<p>Table Price : Rs.1000</p>
+<p>Menu Price : Rs.240</p>
+<p class="total">Total : <span>1240</span></p>
+<a href="1.Reservation Table.html" style="text-decoration: none;color: black;"><button class="pay-btn">Reserve to Pay</button></a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-cols">
+<div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+<div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+<div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+<div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="city-links">
+<div>Restaurant in Chennai<br>Restaurant in Pune</div>
+<div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+<div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+</div>
+</footer>
+
+<div class="footer-bottom">
+<div class="footer-center">
+<p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+<div class="social-icons">
+<img src="social-facebook.png">
+<img src="social-twitter.png">
+<img src="social-instagram.png">
+</div>
+</div>
+
+<div class="footer-address">
+<div class="address-row"><img src="phone-icon.png">(123) 8940-985498</div>
+<div class="address-row"><img src="mail-icon.png">Info@Bookmytable.com</div>
+<div class="address-row"><img src="location-icon.png">Chennai 54375387</div>
+</div>
+</div>
+
+<script>
+function toggleHeart(el){
+    const img = el.querySelector("img");
+    el.classList.toggle("filled");
+    img.src = img.src.includes("heart-filled") ? "Heart.png" : "heart-filled.png";
+}
+</script>
+
+</body>
+</html>

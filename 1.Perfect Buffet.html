@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfect Buffet Restaurant in Chennai</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= HEART CONTROL OPTIONS ================= */
+:root{
+    --heart-filled-size: 40px;
+    --heart-filled-top: 20px;
+    --heart-filled-right: 20px;
+}
+/* ======================================================== */
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#F5EBDD}
+
+/* ================= HEADER ================= */
+.header-top{
+    background:#B89C65;
+    height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.nav{display:flex;gap:120px}
+.nav a{color:#fff;text-decoration:none;font-size:20px}
+.nav a.active{
+    color:black;
+}
+.hamburger{display:none;position:absolute;left:20px;font-size:26px;color:#fff}
+
+.header-bottom{
+    background:#D2C5B3;
+    height:120px;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    gap:40px;
+}
+.logo h1{font-family:'Playfair Display';font-size:32px}
+.logo-book{color:#B89C65}
+.logo-mytable{color:#000}
+.logo p{font-size:14px;color:#fff}
+
+.search-bar{
+    flex:1;
+    height:70px;
+    background:#FFF9F1;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+}
+.search-bar input{border:none;outline:none;flex:1;background:transparent;font-size:22px}
+
+.profile-actions{display:flex;align-items:center;gap:14px}
+.icon-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.icon-btn img{width:23px;height:23px}
+.profile-pic{width:60px;height:60px;border-radius:50%}
+
+/* ================= HERO ================= */
+.hero-img{
+    max-width:1400px;
+    height:405px;
+    background:url('Grant Buffet1.png') center/cover no-repeat;
+    margin:30px auto;
+    border-radius:10px;
+}
+
+/* ================= TITLE ================= */
+.page-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    margin:40px 20px;
+}
+
+/* ================= LIST ================= */
+.list-wrapper{
+    max-width:1400px;
+    margin:auto;
+    padding-bottom:80px;
+}
+.restaurant a{
+    width:50%;          /* same as image width */
+    height:296px;
+    display:block;      /* ❗ important */
+    flex-shrink:0;      /* ❗ prevents shrinking */
+}
+
+.restaurant a img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}   
+.restaurant{
+    background:#fff;
+    border-radius:10px;
+    display:flex;
+    margin-bottom:30px;
+    overflow:hidden;
+    position:relative;
+}
+.restaurant img{
+    width:50%;
+    height:296px;
+    object-fit:cover;
+}
+.details{
+    padding:20px;
+    flex:1;
+    position:relative;
+}
+.details h3{font-size:32px;font-weight:600}
+.details .location{font-size:20px;margin:8px 0}
+.details .info{font-size:20px;line-height:1.6;margin-bottom:20px}
+
+.cost{font-size:20px}
+.price{font-size:20px;font-weight:600;color:#B89C65}
+
+/* ================= HEART ================= */
+.heart{
+    position:absolute;
+    top:30px;
+    right:30px;
+    width:22px;
+    height:22px;
+    background:url('heart2.png') center/contain no-repeat;
+    cursor:pointer;
+    
+}
+.heart.filled{
+    top:var(--heart-filled-top);
+    right:var(--heart-filled-right);
+    width:var(--heart-filled-size);
+    height:var(--heart-filled-size);
+    background:url('heart-filled.png') center/contain no-repeat;
+}
+
+/* ================= STARS ================= */
+.stars{
+    position:absolute;
+    bottom:30px;
+    right:30px;
+    display:flex;
+    gap:4px;
+}
+.stars span{
+    width:24px;
+    height:24px;
+    background:#F0FF99;
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+
+/* ================= DIVIDER ================= */
+.divider{
+    width:100%;
+    height:1px;
+    background:#000;
+    margin:20px 0;
+}
+
+/* ================= FOOTER ================= */
+/* ================= FOOTER (UNCHANGED) ================= */
+.footer{
+    background:#B89C65;
+    padding:60px 100px;
+    color:#fff;
+    font-size: 20px;
+    line-height: 2;
+}
+.footer-cols{
+    display:flex;
+    gap:170px;
+}
+.divider{
+    margin:40px 0;
+    border:2px solid #fff;
+}
+.city-links{
+    display:flex;
+    gap:200px;
+}
+
+.footer-bottom{
+    background:#2E2E2E;
+    color:#fff;
+    padding:40px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.footer-center{
+    flex:1;
+    text-align:center;
+}
+
+.social-icons{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+.social-icons img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.footer-address{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.address-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:20px;
+}
+.address-row img{
+    width:32px;
+    height:32px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.nav{display:none;flex-direction:column;position:absolute;top:77px;background:#B89C65;width:100%}
+.nav.show{display:flex}
+.hamburger{display:block}
+
+.header-bottom{flex-direction:column;height:auto}
+.restaurant{flex-direction:column}
+.restaurant img{width:100%}
+.footer-cols,.city-links,.footer-bottom{flex-direction:column;gap:30px;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="header-top">
+<div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+<nav class="nav" id="navMenu">
+<a href="1.Home with animation.html">Home</a>
+            <a href="1.Perfect Buffet.html"class="active">Reservation</a>
+            <a href="1.Blog.html">Blog</a>
+            <a href="1.About Us.html">About us</a>
+            <a href="1.Contact Us.html">Contact us</a>
+            <a href="1.Need Help.html">Help</a>
+</nav>
+</div>
+
+<div class="header-bottom">
+<div class="logo">
+<h1><span class="logo-book">Book</span><span class="logo-mytable">mytable</span></h1>
+<p>Never wait for your meal</p>
+</div>
+<div class="search-bar"><input placeholder="Search"></div>
+<div class="profile-actions">
+            <div class="icon-btn"><img src="Bell.png"></div>
+            <div class="icon-btn"><a href="1.Contact Us.html"><img src="chat.png"></a></div>
+            <div class="icon-btn"><a href="1.Grand Buffet Wishlist .html"><img src="heart.png"></a></div>
+            <img src="DP.png" class="profile-pic">
+        </div>
+</div>
+</header>
+
+<div class="hero-img"></div>
+<h2 class="page-title">Perfect Buffet Restaurant in Chennai</h2>
+
+<div class="list-wrapper">
+
+<!-- CARD -->
+<div class="restaurant">
+    <a href="1.Grant Buffet.html">
+        <img src="Grant Buffet2.png">
+    </a>
+
+    <div class="details">
+        <h3>Grant Buffet</h3>
+        <p class="location">Viman nagar</p>
+        <div class="divider"></div>
+        <p class="info">North Indian, Mohali, Italian, BBQ</p>
+        <p class="cost">Cost for two :</p>
+        <p class="price">Rs.1000</p>
+        <div class="heart" onclick="toggleHeart(this)"></div>
+        <div class="stars">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- REPEAT CARDS -->
+<div class="restaurant">
+<img src="Grant Buffet3.png">
+<div class="details">
+<h3>Spice Chicken</h3>
+<p class="location">Viman nagar</p>
+<div class="divider"></div>
+<p class="info">North Indian, Mohali, Italian, BBQ</p>
+<p class="cost">Cost for two :</p>
+<p class="price">Rs.1000</p>
+<div class="heart" onclick="toggleHeart(this)"></div>
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+</div>
+
+<div class="restaurant">
+<img src="Grant Buffet4.png">
+<div class="details">
+<h3>Cigreee</h3>
+<p class="location">Viman nagar</p>
+<div class="divider"></div>
+<p class="info">North Indian, Mohali, Italian, BBQ</p>
+<p class="cost">Cost for two :</p>
+<p class="price">Rs.1000</p>
+<div class="heart" onclick="toggleHeart(this)"></div>
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+</div>
+
+<div class="restaurant">
+<img src="Grant Buffet5.png">
+<div class="details">
+<h3>Taste of Punjab</h3>
+<p class="location">Viman nagar</p>
+<div class="divider"></div>
+<p class="info">North Indian, Mohali, Italian, BBQ</p>
+<p class="cost">Cost for two :</p>
+<p class="price">Rs.1000</p>
+<div class="heart" onclick="toggleHeart(this)"></div>
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer-cols">
+        <div><h4>Company</h4><p>About Us<br>Contact Us<br>Customer Reviews<br>Add Your Restaurant</p></div>
+        <div><h4>Policy Info</h4><p>Terms & Conditions<br>Cookies Policy<br>Cancellation Policy<br>Privacy Policy</p></div>
+        <div><h4>Cities</h4><p>Chennai<br>Bangalore<br>Hyderabad<br>Mumbai</p></div>
+        <div><h4>Help</h4><p>Booking Status<br>Add Restaurant</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="city-links">
+        <div>Restaurant in Chennai<br>Restaurant in Pune</div>
+        <div>Restaurant in Bangalore<br>Restaurant in Kolkata</div>
+        <div>Restaurant in Hyderabad<br>Restaurant in Mumbai</div>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    <div class="footer-center">
+        <p>© 2025 Book My Table.Co.in. All rights reserved.</p>
+        <div class="social-icons">
+            <img src="social-facebook.png">
+            <img src="social-twitter.png">
+            <img src="social-instagram.png">
+        </div>
+    </div>
+
+    <div class="footer-address">
+        <div class="address-row">
+            <img src="phone-icon.png">
+            <span>(123) 8940-985498</span>
+        </div>
+        <div class="address-row">
+            <img src="mail-icon.png">
+            <span>Info@Bookmytable.com</span>
+        </div>
+        <div class="address-row">
+            <img src="location-icon.png">
+            <span>Chennai 54375387</span>
+        </div>
+    </div>
+</div>
+
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+function toggleHeart(el){
+    el.classList.toggle("filled");
+}
+</script>
+
+</body>
+</html>
